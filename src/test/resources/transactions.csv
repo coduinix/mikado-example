@@ -1,0 +1,4 @@
+"Date","Name / Description","Account","Contra-account","Code","Debit/credit","Amount (EUR)","Transaction type","Notifications"
+"20190722","Alice","NL20INGB0001234567","NL02ABNA0123456789","GT","Credit","123,45","Online Banking","Here is the money"
+"20190722","Bob","NL20INGB0001234567","NL44RABO0123456789","GT","Debit","87,65","Online Banking","Give me the money"
+"20190622","Alice","NL20INGB0001234567","NL02ABNA0123456789","GT","Credit","111,11","Online Banking","First payment"
