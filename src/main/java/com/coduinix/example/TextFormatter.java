@@ -3,14 +3,14 @@ package com.coduinix.example;
 import java.util.Locale;
 
 public class TextFormatter {
-    private final CsvTransactionStore csvTransactionStore;
+    private final TransactionStore transactionStore;
 
     public TextFormatter() {
-        csvTransactionStore = new CsvTransactionStore(App.getCsvFile());
+        transactionStore = new CsvTransactionStore(App.getCsvFile());
     }
 
     public String formatSummary() {
-        Summary summary = csvTransactionStore.loadSummary();
+        Summary summary = transactionStore.loadSummary();
         return String.format(new Locale("nl", "NL"), "" +
                 "Total credit : € %,10.2f\n" +
                 "Total debit  : € %,10.2f\n" +
