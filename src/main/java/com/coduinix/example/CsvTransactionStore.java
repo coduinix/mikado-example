@@ -10,7 +10,11 @@ import java.text.ParseException;
 import java.util.Locale;
 
 public class CsvTransactionStore {
-    private File csvFile;
+    private final File csvFile;
+
+    public CsvTransactionStore(File csvFile) {
+        this.csvFile = csvFile;
+    }
 
     public Summary loadSummary() {
         try (var in = new FileInputStream(csvFile);
@@ -31,9 +35,5 @@ public class CsvTransactionStore {
         } catch (IOException | ParseException e) {
             throw new RuntimeException("Error while reading transactions", e);
         }
-    }
-
-    public void setSource(File csvFile) {
-        this.csvFile = csvFile;
     }
 }
