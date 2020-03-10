@@ -5,8 +5,8 @@ import java.util.Locale;
 public class TextFormatter {
     private final TransactionStore transactionStore;
 
-    public TextFormatter() {
-        transactionStore = new CsvTransactionStore(App.getCsvFile());
+    public TextFormatter(final TransactionStore transactionStore) {
+        this.transactionStore = transactionStore;
     }
 
     public String formatSummary() {

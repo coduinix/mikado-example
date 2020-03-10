@@ -8,7 +8,7 @@ public class Launcher {
             var file = new File(args[0]);
             App.setCsvFile(file);
             App app = new App();
-            app.run();
+            app.run(new CsvTransactionStore(App.getCsvFile()));
         } catch (Exception e) {
             e.printStackTrace();
         }
