@@ -10,13 +10,14 @@ import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.Locale;
 
-public class CsvTransactionStore {
+public class CsvTransactionStore implements TransactionStore {
     private final File csvFile;
 
     public CsvTransactionStore(File csvFile) {
         this.csvFile = csvFile;
     }
 
+    @Override
     public Summary loadSummary() {
         try (var in = new FileInputStream(csvFile);
              var reader = new BufferedReader(new InputStreamReader(in));
