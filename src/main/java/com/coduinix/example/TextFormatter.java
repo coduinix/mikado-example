@@ -6,8 +6,7 @@ public class TextFormatter {
     private final CsvTransactionStore csvTransactionStore;
 
     public TextFormatter() {
-        csvTransactionStore = new CsvTransactionStore();
-        csvTransactionStore.setSource(App.getCsvFile());
+        csvTransactionStore = new CsvTransactionStore(App.getCsvFile());
     }
 
     public String formatSummary() {
