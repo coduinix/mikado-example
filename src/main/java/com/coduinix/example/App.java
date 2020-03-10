@@ -6,8 +6,8 @@ public class App {
     private static File csvFile;
     private TextFormatter textFormatter;
 
-    public void run() {
-        textFormatter = new TextFormatter();
+    public void run(final TransactionStore transactionStore) {
+        textFormatter = new TextFormatter(transactionStore);
         final var formattedSummary = textFormatter.formatSummary();
         System.out.println(formattedSummary);
     }
