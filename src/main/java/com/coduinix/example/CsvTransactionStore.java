@@ -1,6 +1,7 @@
 package com.coduinix.example;
 
 import com.opencsv.CSVReaderBuilder;
+import com.opencsv.exceptions.CsvException;
 
 import java.io.*;
 import java.math.BigDecimal;
@@ -28,7 +29,7 @@ public class CsvTransactionStore {
                 else debit = debit.add(amount);
             }
             return new Summary(BigDecimal.ZERO.add(credit).subtract(debit), credit, debit);
-        } catch (IOException | ParseException e) {
+        } catch (IOException | ParseException | CsvException e) {
             throw new RuntimeException("Error while reading transactions", e);
         }
     }
