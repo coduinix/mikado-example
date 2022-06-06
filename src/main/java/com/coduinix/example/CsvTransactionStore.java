@@ -15,7 +15,7 @@ public class CsvTransactionStore {
     public Summary loadSummary() {
         try (var in = new FileInputStream(csvFile);
              var reader = new BufferedReader(new InputStreamReader(in));
-             var csvReader = new CSVReaderBuilder(reader).withSkipLines(1).build();
+             var csvReader = new CSVReaderBuilder(reader).withSkipLines(1).build()
         ) {
             BigDecimal credit = BigDecimal.ZERO;
             BigDecimal debit = BigDecimal.ZERO;

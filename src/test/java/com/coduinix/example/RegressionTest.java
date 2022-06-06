@@ -13,15 +13,16 @@ import static org.junit.Assert.assertEquals;
 public class RegressionTest {
 
     @Test
-    public void shouldCalculateTotals() throws Exception {
+    public void shouldCalculateTotals() {
         String actual = captureStdOut(() -> {
             final var fileName = "src/test/resources/transactions.csv";
             Launcher.main(new String[]{fileName});
         });
-        String expected = "" +
-                "Total credit : €     234,56\n" +
-                "Total debit  : €      87,65\n" +
-                "Balance      : €     146,91\n";
+        String expected = """
+                Total credit : €     234,56
+                Total debit  : €      87,65
+                Balance      : €     146,91
+                """;
         assertEquals(expected, actual);
     }
 

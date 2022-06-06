@@ -12,13 +12,13 @@ public class TextFormatter {
 
     public String formatSummary() {
         Summary summary = csvTransactionStore.loadSummary();
-        return String.format(new Locale("nl", "NL"), "" +
-                "Total credit : € %,10.2f\n" +
-                "Total debit  : € %,10.2f\n" +
-                "Balance      : € %,10.2f",
-                summary.getCredit(),
-                summary.getDebit(),
-                summary.getBalance()
+        return String.format(new Locale("nl", "NL"), """
+                        Total credit : € %,10.2f
+                        Total debit  : € %,10.2f
+                        Balance      : € %,10.2f""",
+                summary.credit(),
+                summary.debit(),
+                summary.balance()
         );
     }
 }
