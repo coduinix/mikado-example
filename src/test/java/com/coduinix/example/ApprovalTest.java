@@ -7,9 +7,9 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 /**
- * Unit test for 'the whole' application.
+ * Approval test for 'the whole' application.
  */
-public class RegressionTest {
+public class ApprovalTest {
 
     @Test
     public void shouldCalculateTotals() {
